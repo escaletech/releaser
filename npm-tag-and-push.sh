@@ -43,10 +43,11 @@ done
 
 echo "✏️  Patching package.json"
 npx -q dot-json package.json version $new_ver
-test -f package-lock.json npx -q dot-json package-lock.json version $new_ver
+test -f package-lock.json && npx -q dot-json package-lock.json version $new_ver
 
 echo "📝  Creating commit"
-git commit "chore(release): $tag"
+git add package*
+git commit -m "chore(release): $tag"
 
 echo "🏷  Tagging $tag"
 git tag $tag -a -m "Release $tag"
