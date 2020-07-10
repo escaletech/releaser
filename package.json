@@ -30,12 +30,16 @@
     "concat-stream": "^2.0.0",
     "conventional-changelog-angular": "^5.0.10",
     "conventional-recommended-bump": "^6.0.9",
+    "dot-json": "^1.2.0",
     "git-raw-commits": "^2.0.7",
     "git-semver-tags": "^4.0.0",
     "prompts": "^2.3.2",
-    "semver": "^7.3.2"
+    "semver": "^7.3.2",
+    "yargs": "^15.4.0"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   }
 }
