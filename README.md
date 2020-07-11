@@ -3,62 +3,57 @@ Release scripts for all of Escale's workflows
 
 - [Releaser](#releaser)
   - [What it does](#what-it-does)
+  - [Requirements](#requirements)
   - [Usage](#usage)
-    - [General](#general)
-    - [Node.js](#nodejs)
-    - [Makefile](#makefile)
+    - [Options](#options)
+    - [Node.js shortcut](#nodejs-shortcut)
+    - [Makefile shortcut](#makefile-shortcut)
   - [What it doesn't do](#what-it-doesnt-do)
 
 ## What it does
 
-1. Fetches your repo from origin, to make sure that it is updated
-2. Prints the commits that are being considered for the version bump
-3. Uses `conventional-recommended-bump` and `semver` to figure out the next version
-4. Asks for your approval
-5. Creates the new tag on the current commit
-6. Pushes the tag
+![Example](docs/images/releaser-incremental-tag.gif)
 
+1. Prints the commits that are being considered for the version bump
+2. Uses `conventional-recommended-bump` and `semver` to figure out the next version
+3. Asks for your approval
+4. Creates the new tag on the current commit
+5. Pushes the tag
+
+## Requirements
+
+* [npx](https://www.npmjs.com/package/npx) - automatically bundled with [Node.js 8.2+](https://nodejs.org/en/)
+* [Git](https://git-scm.com/)
 
 ## Usage
 
-Requirements:
-* `npm`
-* `git`
-
-### General
-
-Using the release script consists of running `tag-and-push.sh`, which can be done anytime with:
 ```sh
-bash -c "$(curl -s https://raw.githubusercontent.com/escaletech/releaser/master/tag-and-push.sh)"
+npx github:escaletech/releaser [--update-package-json]
 ```
 
-### Node.js
+### Options
+* `--update-package-json`: pass this option if you want the releaser to update the version number in your `package.json` file. ⚠️ **Only use this option for releasing NPM packages, not applications.**
 
-Add the following to your `package.json`:
+### Node.js shortcut
+
+For calling with `npm run release` in Node.js projects:
 ```json
 {
   "scripts": {
-    "release": "bash -c \"$(curl -s https://raw.githubusercontent.com/escaletech/releaser/master/tag-and-push.sh)\""
+    "release": "npx github:escaletech/releaser"
   }
 }
 ```
 
-Then you can `npm run release`.
+### Makefile shortcut
 
-
-### Makefile
-
-Add the following to your `Makefile`:
+For calling with `make release`, in Go or Terraform projects:
 ```makefile
 release:
-	@bash -c "$$(curl -s https://raw.githubusercontent.com/escaletech/releaser/master/tag-and-push.sh)"
+	npx github:escaletech/releaser
 ```
-
-Then you can run `make release`.
 
 
 ## What it doesn't do
 
-* It doesn't update any changelog file. To do so, we recommend using [`conventional-changelog`](https://github.com/conventional-changelog/conventional-changelog).
-* It doesn't patch `package.json` or any other file. For this, we recommend using [`standard-version`](https://github.com/conventional-changelog/standard-version).
-* It doesn't change any file or create any commit.
+* It doesn't update any changelog file. To do so, we recommend using [`conventional-changelog`](https://github.com/conventional-changelog/conventional-changelog) or similar tool.
