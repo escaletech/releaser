@@ -11,6 +11,8 @@ const {
 } = require('../lib/steps')
 
 async function main () {
+  const dryRun = argv.d || argv['dry-run']
+
   const lastTag = await lookForLastTag()
 
   await printChanges({ lastTag })
@@ -20,10 +22,10 @@ async function main () {
   await askToProceed({ nextTag, lastTag })
 
   if (argv['update-package-json']) {
-    await updatePackageJson({ nextTag })
+    await updatePackageJson({ nextTag, dryRun })
   }
 
-  await applyTagAndPush({ nextTag })
+  await applyTagAndPush({ nextTag, dryRun })
 }
 
 main()
