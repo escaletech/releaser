@@ -9,7 +9,10 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "standard",
+    "typecheck": "tsc --allowJs --checkJs --noEmit ./bin/release.js",
+    "release": "npx github:escaletech/releaser --update-package-json"
   },
   "repository": {
     "type": "git",
@@ -23,7 +26,9 @@
   "homepage": "https://github.com/escaletech/releaser#readme",
   "devDependencies": {
     "@types/jest": "^26.0.4",
-    "jest": "^26.1.0"
+    "jest": "^26.1.0",
+    "standard": "^14.3.4",
+    "typescript": "^3.9.6"
   },
   "dependencies": {
     "chalk": "^4.1.0",
