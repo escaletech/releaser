@@ -1,1 +1,50 @@
-{"name":"releaser","version":"0.1.0","description":"Release scripts for all of Escale's workflows","bin":{"releaser":"bin/release.js"},"directories":{"lib":"lib"},"scripts":{"test":"jest","lint":"standard","typecheck":"tsc --allowJs --checkJs --noEmit ./bin/release.js","release":"npx github:escaletech/releaser --update-package-json"},"repository":{"type":"git","url":"git+https://github.com/escaletech/releaser.git"},"author":"","license":"MIT","bugs":{"url":"https://github.com/escaletech/releaser/issues"},"homepage":"https://github.com/escaletech/releaser#readme","devDependencies":{"@types/jest":"^26.0.4","jest":"^26.1.0","standard":"^14.3.4","typescript":"^3.9.6"},"dependencies":{"chalk":"^4.1.0","concat-stream":"^2.0.0","conventional-changelog-angular":"^5.0.10","conventional-recommended-bump":"^6.0.9","dot-json":"^1.2.0","git-raw-commits":"^2.0.7","git-semver-tags":"^4.0.0","prompts":"^2.3.2","semver":"^7.3.2","yargs":"^15.4.0"},"standard":{"env":["jest"]}}
+{
+  "name": "releaser",
+  "version": "0.1.0",
+  "description": "Release scripts for all of Escale's workflows",
+  "bin": {
+    "releaser": "bin/release.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "standard",
+    "typecheck": "tsc --allowJs --checkJs --noEmit ./bin/release.js",
+    "release": "npx github:escaletech/releaser --update-package-json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escaletech/releaser.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/escaletech/releaser/issues"
+  },
+  "homepage": "https://github.com/escaletech/releaser#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.4",
+    "jest": "^26.1.0",
+    "standard": "^14.3.4",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "concat-stream": "^2.0.0",
+    "conventional-changelog-angular": "^5.0.10",
+    "conventional-recommended-bump": "^6.0.9",
+    "dot-json": "^1.2.0",
+    "git-raw-commits": "^2.0.7",
+    "git-semver-tags": "^4.0.0",
+    "prompts": "^2.3.2",
+    "semver": "^7.3.2",
+    "yargs": "^15.4.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
