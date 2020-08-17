@@ -14,11 +14,8 @@ const {
 async function main () {
   const dryRun = argv.d || argv['dry-run']
   const shouldUpdatePackageJson = argv['update-package-json']
-  const shouldFetchUpdates = argv['fetch-updates']
 
-  if (shouldFetchUpdates) {
-    await fetchUpdates({ dryRun })
-  }
+  await fetchUpdates({ dryRun })
 
   const lastTag = await lookForLastTag()
 
