@@ -1,2 +1,2 @@
 #! /bin/bash
-npx github:escaletech/releaser --update-package-json
+npx github:escaletech/releaser --update-package-json --fetch-updates
