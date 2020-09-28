@@ -14,10 +14,11 @@ const {
 async function main () {
   const dryRun = argv.d || argv['dry-run']
   const shouldUpdatePackageJson = argv['update-package-json']
+  const majorVersion = argv['major-version']
 
   await fetchUpdates({ dryRun })
 
-  const lastTag = await lookForLastTag()
+  const lastTag = await lookForLastTag({ majorVersion })
 
   await printChanges({ lastTag })
 
