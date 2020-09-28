@@ -1,2 +1,2 @@
 #! /bin/bash
-npx github:escaletech/releaser
+npx github:escaletech/releaser $*
