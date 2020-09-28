@@ -28,11 +28,12 @@ Release scripts for all of Escale's workflows
 ## Usage
 
 ```sh
-npx github:escaletech/releaser [--update-package-json]
+npx github:escaletech/releaser [--update-package-json] [--major-version <version>]
 ```
 
 ### Options
 * `--update-package-json`: pass this option if you want the releaser to update the version number in your `package.json` file. ⚠️ **Only use this option for releasing NPM packages, not applications.**
+* `--major-version`: pass this option followed by a major version number to generate a tag specifically for a major version.
 
 ### Node.js shortcut
 
