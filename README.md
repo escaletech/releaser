@@ -28,12 +28,13 @@ Release scripts for all of Escale's workflows
 ## Usage
 
 ```sh
-npx github:escaletech/releaser [--update-package-json] [--major-version <version>]
+npx github:escaletech/releaser [--update-package-json] [--major-version <version>] [--gpg-sign]
 ```
 
 ### Options
 * `--update-package-json`: pass this option if you want the releaser to update the version number in your `package.json` file. ⚠️ **Only use this option for releasing NPM packages, not applications.**
 * `--major-version`: pass this option followed by a major version number to generate a tag specifically for a major version.
+* `--gpg-sign`: pass this option to GPG sign your generated tags.
 
 ### Node.js shortcut
 
