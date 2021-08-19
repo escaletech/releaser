@@ -1,6 +1,6 @@
 {
   "name": "releaser",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Release scripts for all of Escale's workflows",
   "bin": {
     "releaser": "bin/release.js"
