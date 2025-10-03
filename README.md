@@ -35,6 +35,7 @@ npx github:escaletech/releaser [--update-package-json] [--major-version <version
 * `--update-package-json`: pass this option if you want the releaser to update the version number in your `package.json` file. ⚠️ **Only use this option for releasing NPM packages, not applications.**
 * `--major-version`: pass this option followed by a major version number to generate a tag specifically for a major version.
 * `--gpg-sign`: pass this option to GPG sign your generated tags.
+* `--release-title`: pass this option followed by a title to create an annotated tag using that title as the message.
 
 ### Node.js shortcut
 
