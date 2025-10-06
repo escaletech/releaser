@@ -16,6 +16,7 @@ async function main () {
   const shouldUpdatePackageJson = argv['update-package-json']
   const majorVersion = argv['major-version']
   const gpgSign = argv['gpg-sign']
+  const releaseTitle = argv['release-title'] ?? argv.releaseTitle ?? argv.title ?? argv.t
 
   await fetchUpdates({ dryRun })
 
@@ -31,7 +32,7 @@ async function main () {
     await updatePackageJson({ nextTag, dryRun })
   }
 
-  await applyTagAndPush({ nextTag, dryRun, gpgSign })
+  await applyTagAndPush({ nextTag, dryRun, gpgSign, releaseTitle })
 }
 
 main()
