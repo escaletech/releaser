@@ -8,7 +8,8 @@ const {
   askToProceed,
   updatePackageJson,
   applyTagAndPush,
-  fetchUpdates
+  fetchUpdates,
+  askForGmudTitle
 } = require('../lib/steps')
 
 async function main () {
@@ -16,7 +17,7 @@ async function main () {
   const shouldUpdatePackageJson = argv['update-package-json']
   const majorVersion = argv['major-version']
   const gpgSign = argv['gpg-sign']
-  const releaseTitle = argv['release-title'] ?? argv.releaseTitle ?? argv.title ?? argv.t
+  const releaseTitle = await askForGmudTitle()
 
   await fetchUpdates({ dryRun })
 
