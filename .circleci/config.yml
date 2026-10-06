@@ -15,7 +15,7 @@ jobs:
           command: |
             git init
             git remote add origin "https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git"
-            git fetch --depth 1 origin "${CIRCLE_SHA}"
+            git fetch --depth 1 origin "${CIRCLE_SHA1}"
             git checkout --force FETCH_HEAD
       - run: npm install
       - run: npm run lint
