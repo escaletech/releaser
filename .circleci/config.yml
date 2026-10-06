@@ -8,7 +8,15 @@ jobs:
     docker:
       - image: circleci/node:12
     steps:
-      - checkout
+      # The project deploy key is rejected by GitHub. The repo is public,
+      # so fetch this commit over HTTPS instead of the built-in SSH checkout.
+      - run:
+          name: Checkout code
+          command: |
+            git init
+            git remote add origin "https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git"
+            git fetch --depth 1 origin "${CIRCLE_SHA}"
+            git checkout --force FETCH_HEAD
       - run: npm install
       - run: npm run lint
       - run: npm run typecheck
