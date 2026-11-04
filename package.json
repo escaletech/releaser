@@ -47,5 +47,8 @@
     "env": [
       "jest"
     ]
+  },
+  "overrides": {
+    "micromatch": "^4.0.8"
   }
 }
