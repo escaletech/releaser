@@ -12,7 +12,8 @@ if (infoFlag === 'version') {
   console.log(pkg.version)
   process.exit(0)
 }
-if (infoFlag === 'help') {
+// O yargs também mostrava a ajuda quando o último posicional era `help`
+if (infoFlag === 'help' || (!infoFlag && argv._[argv._.length - 1] === 'help')) {
   console.log([
     'Options:',
     '  --help     Show help                                                 [boolean]',
