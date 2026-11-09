@@ -41,7 +41,7 @@
     "prompts": "^2.3.2",
     "semver": "^7.3.2",
     "semver-sort": "^1.0.0",
-    "yargs": "^15.4.0"
+    "yargs-parser": "^20.2.4"
   },
   "standard": {
     "env": [
