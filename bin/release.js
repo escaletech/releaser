@@ -1,7 +1,11 @@
 #! /usr/bin/env node
 const fs = require('fs')
 const path = require('path')
-const argv = require('yargs-parser')(process.argv.slice(2), { boolean: ['help', 'version'] })
+const argv = require('yargs-parser')(process.argv.slice(2), {
+  boolean: ['help', 'version'],
+  // Como no yargs: o que vem depois de `--` não conta como posicional `help`
+  configuration: { 'populate--': true }
+})
 
 // Mantém o --help/--version que o yargs respondia (vale o que vier primeiro)
 const infoFlag = process.argv.slice(2)
