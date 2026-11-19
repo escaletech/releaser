@@ -26,7 +26,7 @@
   "homepage": "https://github.com/escaletech/releaser#readme",
   "devDependencies": {
     "@types/jest": "^26.0.4",
-    "jest": "^26.1.0",
+    "jest": "^30.5.2",
     "standard": "^16.0.4",
     "typescript": "^3.9.6"
   },
@@ -42,6 +42,11 @@
     "semver": "^7.3.2",
     "semver-sort": "^1.0.0",
     "yargs": "^15.4.0"
+  },
+  "overrides": {
+    "@types/babel__traverse": "7.11.0",
+    "glob@>=9.0.0": "^14.0.2",
+    "minimatch@>=7.0.0": "^11.0.1"
   },
   "standard": {
     "env": [
